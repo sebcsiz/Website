@@ -12,12 +12,14 @@
         <div class="container">
             <nav>
                 <img src="images/sebTheCrab.jpg" class="logo">
-                <ul>
+                <ul id="side-menu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closeMenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Software Engineer in Training</p>
@@ -33,7 +35,7 @@
                 <img src="images/sebTheCrab.jpg">
                 <div class="about-column2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>zZzZzZzZz</p>
                     
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
@@ -47,7 +49,6 @@
                             <li><span>HTML, CSS, JavaScript</span><br>Basic Web Design</li>
                             <li><span>R</span><br>Statistical Inference</li>
                             <li><span>SQL</span><br>Basic knowledge of databases</li>
-
                         </ul>
                     </div>
                     <div class="tab-contents" id="projects">
@@ -131,7 +132,22 @@
     }
 
 </script>
+
+<script>
+    var sidemenu = document.getElementById("side-menu");
+
+    function openMenu() {
+        sidemenu.style.right = "0";
+    }
+
+    function closeMenu() {
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
 <script src="https://kit.fontawesome.com/256eddaef6.js" crossorigin="anonymous"></script>
+
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyOD-DbSXOP30QaXmTh6evuA8-Dg92yWh0ZzfDQE5Wd3h1pIEFvk2Xtz_FaQAg-bD2n/exec'
     const form = document.forms['submit-to-google-sheet']

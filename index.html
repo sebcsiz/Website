@@ -9,7 +9,102 @@
 </head>
 <body>
     <div id="header">
-
+        <div class="container">
+            <nav>
+                <img src="images/sebTheCrab.jpg" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer in Training</p>
+                <h1>Hi, I'm <span>Sebastian</span></h1>
+            </div>
+        </div>
     </div>
+    <!-------------About------------------>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-column1"></div>
+                <img src="images/sebTheCrab.jpg">
+                <div class="about-column2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Java, C++</span><br>Data Structures and Software Construction</li>
+                            <li><span>HTML, CSS, JavaScript</span><br>Basic Web Design</li>
+                            <li><span>R</span><br>Statistical Inference</li>
+                            <li><span>SQL</span><br>Basic knowledge of databases</li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>Banking Application</span><br>Using Java and Java's Swing library
+                                along with Software deaign techniques, I made a simple banking application 
+                                that allows user to open an account and manage their fund.</li>
+                            <li><span>Statistical Inference Final Project</span><br>Myself along with 
+                                three groups members used R and inferential techniques to compare crime 
+                                rates in different neighbours to see which neighbourhood(s)
+                                had the highest crime rates from a 2021 data set from the Vancouver Police Department.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021-Current</span><br>B.Sc Mathematics at The University of British Columbia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------Portfolio------------------>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Portfolio</h1>
+            <div class="projects">
+                <div class="Bank Application">
+                    <!-- <img src=""> -->
+                </div>
+                <div class="Statistical Inference Project">
+                    <!-- <img src=""> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-------------Scripts------------------>
+<script>
+    var tabLinks = document.getElementsByClassName("tab-links");
+    var tabContents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabName) {
+        for (tabLink of tabLinks) {
+            tabLink.classList.remove("active-link");
+        }
+
+        for (tabContent of tabContents) {
+            tabContent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabName).classList.add("active-tab");
+    }
+
+</script>
+
 </body>
 </html>

@@ -164,16 +164,6 @@ nav ul li a:hover::after{
     display: block;
 }
 
-/*--------------portfolio------------*/
-
-#portfolio{
-    padding: 50px 0;
-}
-
-.container{
-    float: left;
-}
-
 /*--------------contact------------*/
 
 .contact-left{

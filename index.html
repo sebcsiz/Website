@@ -11,11 +11,9 @@
     <div id="header">
         <div class="container">
             <nav>
-                <!-- <img src="images/sebTheCrab.jpg" class="logo"> -->
                 <ul id="side-menu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class="fa-regular fa-circle-xmark" onclick="closeMenu()"></i>
                 </ul>
@@ -27,12 +25,12 @@
             </div>
         </div>
     </div>
+
     <!-------------About------------------>
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="about-column1"></div>
-                <!-- <img src="images/sebTheCrab.jpg"> -->
                 <div class="about-column2">
                     <h1 class="sub-title">About Me</h1>
                     <p>zZzZzZzZz</p>
@@ -52,13 +50,23 @@
                     </div>
                     <div class="tab-contents" id="projects">
                         <ul>
-                            <li><span>Banking Application</span><br>Using Java and Java's Swing library
+                            <li>
+                                <span>Banking Application</span><br>
+                                Using Java and Java's Swing library
                                 along with Software deaign techniques, I made a simple banking application 
-                                that allows user to open an account and manage their fund.</li>
-                            <li><span>Statistical Inference Final Project</span><br>Myself along with 
+                                that allows user to open an account and manage their fund.
+                            </li>
+                            <li>
+                                <span>Statistical Inference Final Project</span><br>
+                                Myself along with 
                                 three groups members used R and inferential techniques to compare crime 
                                 rates in different neighbours to see which neighbourhood(s)
                                 had the highest crime rates from a 2021 data set from the Vancouver Police Department.
+                            </li>
+                            <li>
+                                <span>Linear Programming Final Project</span><br>
+                                Using Linear Programming techniques such as the simplex method and duality, I created 
+                                a report that finds which UBC buildings are expand upon to maximize space allocation.  
                             </li>
                         </ul>
                     </div>
@@ -71,21 +79,7 @@
             </div>
         </div>
     </div>
-    <!-------------Portfolio------------------>
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Portfolio</h1>
-            <p>Coming Soon.</p>
-            <div class="projects-portfolio">
-                <div class="Bank Application">
-                    <!-- <img src=""> -->
-                </div>
-                <div class="Statistical Inference Project">
-                    <!-- <img src=""> -->
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-------------Contact------------------>
     <div id="contact">
         <div class="container">
@@ -144,8 +138,6 @@
 
 </script>
 
-<script src="https://kit.fontawesome.com/256eddaef6.js" crossorigin="anonymous"></script>
-
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyOD-DbSXOP30QaXmTh6evuA8-Dg92yWh0ZzfDQE5Wd3h1pIEFvk2Xtz_FaQAg-bD2n/exec'
     const form = document.forms['submit-to-google-sheet']
@@ -156,7 +148,7 @@
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
             msg.innerHTML = "Message Sent!"
-            setTimeout(function(){
+            setTimeout(function() {
                 msg.innerHTML = ""
             }, 500)
             form.reset();
@@ -164,5 +156,7 @@
         .catch(error => console.error('Error!', error.message))
     })
   </script>
+
+  <script src="https://kit.fontawesome.com/256eddaef6.js" crossorigin="anonymous"></script>
 </body>
 </html>

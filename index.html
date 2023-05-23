@@ -11,7 +11,6 @@
     <div id="header">
         <div class="container">
             <nav>
-                <!-- <img src="images/sebTheCrab.jpg" class="logo"> -->
                 <ul id="side-menu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -27,12 +26,12 @@
             </div>
         </div>
     </div>
+    
     <!-------------About------------------>
     <div id="about">
         <div class="container">
-            <div class="row">
+            <div class="column">
                 <div class="about-column1"></div>
-                <!-- <img src="images/sebTheCrab.jpg"> -->
                 <div class="about-column2">
                     <h1 class="sub-title">About Me</h1>
                     <p>zZzZzZzZz</p>
@@ -71,27 +70,13 @@
             </div>
         </div>
     </div>
-    <!-------------Portfolio------------------>
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Portfolio</h1>
-            <p>Coming Soon.</p>
-            <div class="projects-portfolio">
-                <div class="Bank Application">
-                    <!-- <img src=""> -->
-                </div>
-                <div class="Statistical Inference Project">
-                    <!-- <img src=""> -->
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-------------Contact------------------>
     <div id="contact">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
+                    <h1 class="sub-title">Contact</h1>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/sebastian_csizmazia/"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/sebastian-csizmazia-3b7a00208/"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -112,57 +97,57 @@
     </div>
     
     <!-------------Scripts------------------>
-<script>
-    var tabLinks = document.getElementsByClassName("tab-links");
-    var tabContents = document.getElementsByClassName("tab-contents");
+    <script>
+        var tabLinks = document.getElementsByClassName("tab-links");
+        var tabContents = document.getElementsByClassName("tab-contents");
 
-    function opentab(tabName) {
-        for (tabLink of tabLinks) {
-            tabLink.classList.remove("active-link");
+        function opentab(tabName) {
+            for (tabLink of tabLinks) {
+                tabLink.classList.remove("active-link");
+            }
+
+            for (tabContent of tabContents) {
+                tabContent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab");
         }
 
-        for (tabContent of tabContents) {
-            tabContent.classList.remove("active-tab");
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("side-menu");
+
+        function openMenu() {
+            sidemenu.style.right = "0";
         }
 
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabName).classList.add("active-tab");
-    }
+        function closeMenu() {
+            sidemenu.style.right = "-200px";
+        }
 
-</script>
+    </script>
 
-<script>
-    var sidemenu = document.getElementById("side-menu");
+    <script src="https://kit.fontawesome.com/256eddaef6.js" crossorigin="anonymous"></script>
 
-    function openMenu() {
-        sidemenu.style.right = "0";
-    }
-
-    function closeMenu() {
-        sidemenu.style.right = "-200px";
-    }
-
-</script>
-
-<script src="https://kit.fontawesome.com/256eddaef6.js" crossorigin="anonymous"></script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyOD-DbSXOP30QaXmTh6evuA8-Dg92yWh0ZzfDQE5Wd3h1pIEFvk2Xtz_FaQAg-bD2n/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message Sent!"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            }, 500)
-            form.reset();
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyOD-DbSXOP30QaXmTh6evuA8-Dg92yWh0ZzfDQE5Wd3h1pIEFvk2Xtz_FaQAg-bD2n/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 500)
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
         })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+    </script>
 </body>
 </html>
